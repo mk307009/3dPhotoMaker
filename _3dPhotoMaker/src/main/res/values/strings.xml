@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">3dPhotoMaker</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Menu Hamburger Options -->
+    <string name="algorithm">3D Algorithm</string>
+    <string name="one_frame">One Frame 3D</string>
+    <string name="debug_string">Debug Mode</string>
+    <string name="manual_mode_string">Manual Mode</string>
+    <!--End Menu Hamburger Options -->
+    
+    <!-- Menu Popup Algorithm Options -->
+    <string name="dubois">Dubois</string>
+    <string name="mono">Monochrome</string>
+    <string name="pns">PNS</string>
+    <string name="opt_color_string">Optimized Color</string>
+    <string name="full_color_string">Full Color</string>
+	<!-- End Menu Popup Algorithm Options -->
+</resources>

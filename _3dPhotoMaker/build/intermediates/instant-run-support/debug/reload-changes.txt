@@ -1,0 +1,5 @@
+CHANGED,F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\pl\m4\photomaker\PhotoMaker$override.class
+CHANGED,F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\pl\m4\photomaker\PhotoMaker$2$override.class
+CHANGED,F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\pl\m4\photomaker\PhotoMaker$PreviewImage$override.class
+CHANGED,F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\pl\m4\photomaker\PhotoMaker$3$override.class

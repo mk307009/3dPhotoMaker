@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="3dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/algorithm_menu"
+            style="@style/settings_button_layout" >
+
+            <TextView
+                style="@style/settings_button_first_col"
+                android:text="@string/algorithm" />
+
+            <TextView
+                android:id="@+id/algorithm_text_view"
+                style="@style/settings_button_sec_col"
+                android:text="@string/dubois" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/one_frame"
+            style="@style/settings_button_layout" >
+
+            <TextView
+                style="@style/settings_button_first_col"
+                android:text="@string/one_frame" />
+
+            <CheckBox
+                android:id="@+id/one_frame_check"
+                style="@style/settings_button_sec_col"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/debug_mode"
+            style="@style/settings_button_layout" >
+
+            <TextView
+                style="@style/settings_button_first_col"
+                android:text="@string/debug_string" />
+
+            <CheckBox
+                android:id="@+id/debug_mode_checkbox"
+                style="@style/settings_button_sec_col"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/manual_mode"
+            style="@style/settings_button_layout" >
+
+            <TextView
+                style="@style/settings_button_first_col"
+                android:text="@string/manual_mode_string" />
+
+            <CheckBox
+                android:id="@+id/manual_mode_checkbox"
+                style="@style/settings_button_sec_col"
+                android:clickable="false" />
+        </RelativeLayout>
+        
+    </LinearLayout>
+</ScrollView>
