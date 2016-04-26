@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.opencv.photo.Photo;
 
 import pl.m4.photomaker.listener.OnSettingsDialogGlobalLayoutListener;
 import pl.m4.photomaker.listener.SettingsListener;
@@ -122,10 +121,10 @@ public class SettingsDialog extends DialogFragment {
 			case "PNS": {
 				algorithm3d.setText(R.string.pns);
 			}break;
-			case "OptimizedColor": {
+			case "Optimized Color": {
 				algorithm3d.setText(R.string.opt_color_string);
 			}break;
-			case "FullColor": {
+			case "Full Color": {
 				algorithm3d.setText(R.string.full_color_string);
 			}break;
 		}

@@ -4,28 +4,28 @@
     api-level="19"
     density="hdpi"
     format="7"
-    timestamp="14407400647364" >
+    timestamp="13739648479260" >
 
     <task
         name="javac"
-        duration="370" />
+        duration="330" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="47" />
+        duration="217" />
     <task
         name="verifier"
-        duration="6" />
+        duration="24" />
 
     <artifact
-        location="F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\outputs\apk\_3dPhotoMaker-debug.apk"
+        location="D:\projects\3dPhotoMaker\_3dPhotoMaker\build\outputs\apk\_3dPhotoMaker-debug.apk"
         type="MAIN" />
 
-    <build timestamp="14407400647364" >
+    <build timestamp="13739648479260" >
         <artifact
-            location="F:\programming\Android\3dPhotoMaker\_3dPhotoMaker\build\outputs\apk\_3dPhotoMaker-debug.apk"
+            location="D:\projects\3dPhotoMaker\_3dPhotoMaker\build\outputs\apk\_3dPhotoMaker-debug.apk"
             type="MAIN" />
     </build>
 

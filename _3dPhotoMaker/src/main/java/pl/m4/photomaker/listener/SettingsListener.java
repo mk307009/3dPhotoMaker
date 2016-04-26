@@ -16,7 +16,7 @@ import pl.m4.photomaker.R;
 import pl.m4.photomaker.SettingsPreferences;
 
 public class SettingsListener {
-	private static final String TAG = "m4photo:SettingsListener";
+	private static final String TAG = "SettingsListener";
 	private static final String MODE = "3dMode";
 	private static final String DUBOIS = "Dubois";
 	private static final String MONO = "Monochrome";

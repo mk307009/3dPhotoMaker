@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\programming\\Android\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\res\\merged\\debug\\values-v18\\values-v18.xml",
+        "outputFile": "D:\\projects\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\res\\merged\\debug\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "F:\\programming\\Android\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v18\\values-v18.xml",
+                    "file": "D:\\projects\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v18\\values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

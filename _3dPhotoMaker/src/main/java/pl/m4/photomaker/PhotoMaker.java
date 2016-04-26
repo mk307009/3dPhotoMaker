@@ -1,9 +1,24 @@
 package pl.m4.photomaker;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ListIterator;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.hardware.Camera.Size;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.WindowManager.LayoutParams;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
@@ -20,25 +35,10 @@ import org.opencv.core.MatOfPoint2f;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.video.Video;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.hardware.Camera.Size;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.SurfaceView;
-import android.view.View;
-import android.view.WindowManager.LayoutParams;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
 import pl.m4.photomaker.listener.MainListener;
 
@@ -189,7 +189,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
                 generatePreview();
             checkSaving();
 
-            if (PhotoMaker.oneFrame)
+            if (PhotoMaker.oneFrame || resultBmp != null)
                 return inputFrame.rgba();
 
             MatOfByte status = calculateOpticalFlow(inputFrame);
@@ -371,23 +371,29 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     	savePhoto.setEnabled(false);
     	savePhoto.setAlpha(disableButton);
     	if (openCvCamera.getFrameData(0) != null){
-    		openCvCamera.setFrameData(null, 0);
-    		openCvCamera.setFrameData(null, 1);
-    		firstFrame = null;
-    		secondFrame = null;
-    		isPreview = false;
-    		vDraw.resetPos();
+            resetPhotos();
     	}
     	openCvCamera.takePicture(0);
     }
+
+    public void resetPhotos(){
+        openCvCamera.setFrameData(null, 0);
+        openCvCamera.setFrameData(null, 1);
+        firstFrame = null;
+        secondFrame = null;
+        isPreview = false;
+        cleanResultBitmap();
+        vDraw.resetPos();
+    }
+
+    protected void cleanResultBitmap(){
+        if (resultBmp != null)
+            resultBmp.recycle();
+        resultBmp = null;
+    }
     
     public void resetPhotoSettings(){
-    	openCvCamera.setFrameData(null, 0);
-		openCvCamera.setFrameData(null, 1);
-		firstFrame = null;
-		secondFrame = null;
-		isPreview = false;
-		vDraw.resetPos();
+    	resetPhotos();
 		makePhoto.setEnabled(true);
 		makePhoto.setAlpha(1.0f);
     }
@@ -428,7 +434,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
         	    	Toast.makeText(getApplicationContext(), "Saving completed.", Toast.LENGTH_SHORT).show();
         	    	makePhoto.setEnabled(true);
         	    	makePhoto.setAlpha(1.0f);
-        	    	resultBmp.recycle();
+                    cleanResultBitmap();
         	    }
         	});
     	}
@@ -473,13 +479,13 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
 				else
 					bitmapResult = anaglyph.pns3d(frame[0], frame[1]);
 			}break;
-			case "OptimizedColor": {
+			case "Optimized Color": {
 				if (PhotoMaker.oneFrame)
 					bitmapResult = anaglyph.anaglyphOptimizedColor(frame[0]);
 				else
 					bitmapResult = anaglyph.anaglyphOptimizedColor(frame[0], frame[1]);
 			}break;
-			case "FullColor": {
+			case "Full Color": {
 				if (PhotoMaker.oneFrame)
 					bitmapResult = anaglyph.anaglyphFullColor(frame[0]);
 				else

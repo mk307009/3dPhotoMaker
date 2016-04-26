@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\programming\\Android\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\res\\merged\\debug\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "outputFile": "D:\\projects\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\res\\merged\\debug\\values-h720dp-v13\\values-h720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "F:\\programming\\Android\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "file": "D:\\projects\\3dPhotoMaker\\_3dPhotoMaker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
