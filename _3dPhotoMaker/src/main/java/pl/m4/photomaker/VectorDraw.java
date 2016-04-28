@@ -6,14 +6,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
 public class VectorDraw extends View {
-	private static final String TAG = "m4photo:VectorDraw";
+	private static final String TAG = "VectorDraw";
 	private Paint paint, recPaint;
 	private float x, y;
 	private int width;

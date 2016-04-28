@@ -11,14 +11,9 @@ void root(const uchar4 *v_in, uchar4 *v_out, uint32_t x, uint32_t y) {
     const uchar4 *v_in2 = rsGetElementAt(secondImage, x, y);
     rightImage = rsUnpackColor8888(*v_in2).rgb;
 
-    outputImage.r = leftImage.r;
+    outputImage.r = (0.7 * leftImage.g) + (0.3 * leftImage.b);
     outputImage.g = rightImage.g;
     outputImage.b = rightImage.b;
 
     *v_out = rsPackColorTo8888(outputImage);
 }
-
-/*rs_script gCustomScript;
-void specializedProcessing(rs_allocation in) {
-  //rsForEach(gCustomScript, in, ignoredOut);
-}*/

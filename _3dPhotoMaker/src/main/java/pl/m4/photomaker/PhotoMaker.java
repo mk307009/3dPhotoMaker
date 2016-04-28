@@ -41,6 +41,11 @@ import java.util.List;
 import java.util.ListIterator;
 
 import pl.m4.photomaker.listener.MainListener;
+import pl.m4.photomaker.stereo.AnaglyphDubois;
+import pl.m4.photomaker.stereo.AnaglyphFullColor;
+import pl.m4.photomaker.stereo.AnaglyphMonochrome;
+import pl.m4.photomaker.stereo.AnaglyphOptimizedColor;
+import pl.m4.photomaker.stereo.SideBySide;
 
 @SuppressWarnings("deprecation")
 public class PhotoMaker extends Activity implements CvCameraViewListener2{
@@ -61,7 +66,6 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     private SubMenu mResolutionMenu;
     private ImageView imgViewResult;
     private Button settings, makePhoto, savePhoto;
-    private Anaglyph anaglyph;
     private FileManager fileMan;
     private VectorDraw vDraw;
     private SettingsPreferences preferences;
@@ -104,7 +108,6 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     
     public PhotoMaker() {
         Log.i(TAG, "Instantiated new " + this.getClass());
-        anaglyph = new Anaglyph();
         fileMan = new FileManager();        
     }
     
@@ -463,33 +466,33 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
 			switch (algorithm) {
 			case "Dubois": {
 				if (PhotoMaker.oneFrame)
-					bitmapResult = anaglyph.anaglyphDubois(frame[0]);
+                    bitmapResult = new AnaglyphDubois(getApplicationContext()).createStereoscopicImage(frame[0]);
 				else
-					bitmapResult = anaglyph.anaglyphDubois(frame[0], frame[1]);
+                    bitmapResult = new AnaglyphDubois(getApplicationContext()).createStereoscopicImage(frame[0], frame[1]);
 			}break;
 			case "Monochrome": {
 				if (PhotoMaker.oneFrame)
-					bitmapResult = anaglyph.anaglyphMonochrome(frame[0]);
+                    bitmapResult = new AnaglyphMonochrome(getApplicationContext()).createStereoscopicImage(frame[0]);
 				else
-					bitmapResult = anaglyph.anaglyphMonochrome(frame[0], frame[1]);
+                    bitmapResult = new AnaglyphMonochrome(getApplicationContext()).createStereoscopicImage(frame[0], frame[1]);
 			}break;
 			case "PNS": {
 				if (PhotoMaker.oneFrame)
-					bitmapResult = anaglyph.pns3d(frame[0]);
+                    bitmapResult = new SideBySide().createStereoscopicImage(frame[0]);
 				else
-					bitmapResult = anaglyph.pns3d(frame[0], frame[1]);
+                    bitmapResult = new SideBySide().createStereoscopicImage(frame[0], frame[1]);
 			}break;
 			case "Optimized Color": {
 				if (PhotoMaker.oneFrame)
-					bitmapResult = anaglyph.anaglyphOptimizedColor(frame[0]);
+                    bitmapResult = new AnaglyphOptimizedColor(getApplicationContext()).createStereoscopicImage(frame[0]);
 				else
-					bitmapResult = anaglyph.anaglyphOptimizedColor(frame[0], frame[1]);
+                    bitmapResult = new AnaglyphOptimizedColor(getApplicationContext()).createStereoscopicImage(frame[0], frame[1]);
 			}break;
 			case "Full Color": {
 				if (PhotoMaker.oneFrame)
-					bitmapResult = anaglyph.anaglyphFullColor(frame[0]);
+                    bitmapResult =  new AnaglyphFullColor(getApplicationContext()).createStereoscopicImage(frame[0]);
 				else
-					bitmapResult = anaglyph.anaglyphFullColor(frame[0], frame[1]);
+                    bitmapResult = new AnaglyphFullColor(getApplicationContext()).createStereoscopicImage(frame[0], frame[1]);
 			}break;
 			}
 			return bitmapResult;

@@ -1,9 +1,5 @@
 package pl.m4.photomaker;
 
-import java.util.List;
-
-import org.opencv.android.JavaCameraView;
-
 import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
@@ -12,10 +8,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.opencv.android.JavaCameraView;
+
+import java.util.List;
+
 @SuppressWarnings("deprecation")
 public class CameraView extends JavaCameraView implements PictureCallback {
 
-    private static final String TAG = "m4photo:CameraView";
+    private static final String TAG = "CameraView";
     private byte[] firstFrame = null,secondFrame = null;
     private int pictureCount = 0;
 

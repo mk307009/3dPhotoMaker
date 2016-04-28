@@ -1,18 +1,18 @@
 package pl.m4.photomaker;
 
+import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.os.Environment;
+import android.util.Log;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.os.Environment;
-import android.util.Log;
-
 public class FileManager {
-	private final String TAG = "m4photo:FileManager";
+	private final String TAG = "FileManager";
 	
 	@SuppressLint("SimpleDateFormat")
 	public void savePicturePNG(final Bitmap data,final String type) {
