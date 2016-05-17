@@ -1,13 +1,13 @@
-package pl.m4.photomaker.listener;
+package pl.m4.photomaker.view.listener;
 
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 
-public class OnSettingsDialogGlobalLayoutListener implements OnGlobalLayoutListener {
+public class SettingsDialogGlobalLayoutListener implements OnGlobalLayoutListener {
     private View view;
     private int maxHeight;
 
-    public OnSettingsDialogGlobalLayoutListener(View view, int height) {
+    public SettingsDialogGlobalLayoutListener(View view, int height) {
         this.view = view;
         maxHeight = height - 100;
     }

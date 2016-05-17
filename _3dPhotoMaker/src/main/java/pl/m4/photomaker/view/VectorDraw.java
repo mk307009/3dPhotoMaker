@@ -1,4 +1,4 @@
-package pl.m4.photomaker;
+package pl.m4.photomaker.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+
+import pl.m4.photomaker.Calc;
+import pl.m4.photomaker.PhotoMaker;
 
 public class VectorDraw extends View {
 	private static final String TAG = "VectorDraw";
@@ -24,12 +27,12 @@ public class VectorDraw extends View {
 	private float origX, origY;
 	private CameraView camera;
 
-	public VectorDraw(Context activity, CameraView openCvCamera) {
+	public VectorDraw(Context activity, CameraView cameraView) {
 		super(activity);
 		Log.i(TAG, "constructor VectorDraw");
 		paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		recPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-		camera = openCvCamera;
+		camera = cameraView;
 		paint.setColor(Color.RED);
 		//paint.setShadowLayer(8, 0, 0, Color.WHITE);
 		setLayerType(LAYER_TYPE_SOFTWARE, paint);

@@ -8,8 +8,8 @@ public abstract class Stereoscopic {
     public final int PIXEL_MOVED = 30;
 
     protected Bitmap joinBitmap(Bitmap firstFrame, Bitmap secondFrame) {
-        Bitmap cs = null;
-        int width, height = 0;
+        Bitmap cs;
+        int width, height;
 
         if (firstFrame.getWidth() > secondFrame.getWidth()) {
             width = firstFrame.getWidth() + secondFrame.getWidth();

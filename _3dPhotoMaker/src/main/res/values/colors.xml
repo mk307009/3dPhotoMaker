@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color_settings_menu">#4279BD</color>
+
+    <color name="primary_darkness">#303F9F</color>
+    <color name="primary_darker">#3F51B5</color>
+    <color name="primary_lighter">#C5CAE9</color>
+
+    <color name="secondary_darkness">#DD2C00</color>
+    <color name="secondary_darker">#FF6E40</color>
+    <color name="secondary_lighter">#FF6E40</color>
+
+</resources>

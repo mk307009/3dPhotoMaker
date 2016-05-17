@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="pl.m4.photomaker.PhotoMaker" >
     
-    <pl.m4.photomaker.CameraView
+    <pl.m4.photomaker.view.CameraView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

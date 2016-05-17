@@ -1,4 +1,4 @@
-package pl.m4.photomaker.listener;
+package pl.m4.photomaker.view.listener;
 
 import android.support.v7.widget.PopupMenu;
 import android.util.Log;

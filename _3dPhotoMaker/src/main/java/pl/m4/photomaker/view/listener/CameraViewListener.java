@@ -1,4 +1,4 @@
-package pl.m4.photomaker.listener;
+package pl.m4.photomaker.view.listener;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,13 +10,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 @SuppressLint("ClickableViewAccessibility")
-public class MainListener {
+public class CameraViewListener {
 	private float x1 = 0, x2 = 0;
 	private final int MIN_DISTANCE = 100;
 	private Context context;
 	private ImageView preview;
 
-	public MainListener(Context context, ImageView prev) {
+	public CameraViewListener(Context context, ImageView prev) {
 		this.context = context;
 		preview = prev;
 	}

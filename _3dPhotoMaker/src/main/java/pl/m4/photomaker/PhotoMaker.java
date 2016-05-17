@@ -40,7 +40,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
-import pl.m4.photomaker.listener.MainListener;
+import pl.m4.photomaker.view.CameraView;
+import pl.m4.photomaker.view.VectorDraw;
+import pl.m4.photomaker.view.listener.CameraViewListener;
 import pl.m4.photomaker.stereo.AnaglyphDubois;
 import pl.m4.photomaker.stereo.AnaglyphFullColor;
 import pl.m4.photomaker.stereo.AnaglyphMonochrome;
@@ -65,7 +67,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     private MenuItem[] mResolutionMenuItems;
     private SubMenu mResolutionMenu;
     private ImageView imgViewResult;
-    private Button settings, makePhoto, savePhoto;
+    private Button makePhoto, savePhoto;
     private FileManager fileMan;
     private VectorDraw vDraw;
     private SettingsPreferences preferences;
@@ -80,7 +82,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     private Bitmap resultBmp = null;
     private Thread savingThread = null;
     ProgressDialog progressBar;
-    private MainListener mainViewListeners;
+    private CameraViewListener mainViewListeners;
     private float disableButton = 0.6f;
     
     static {
@@ -120,7 +122,6 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
 
         openCvCamera = (CameraView) findViewById(R.id.camview_activity_java_surface);
         imgViewResult = (ImageView) findViewById(R.id.previewPhotoResult);
-        settings = (Button) findViewById(R.id.settings);
         makePhoto = (Button)findViewById(R.id.Button3dCreator);
         savePhoto = (Button)findViewById(R.id.savePhoto);
         savePhoto.setEnabled(false);
@@ -131,7 +132,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
         vDraw = new VectorDraw(this, openCvCamera);
         addContentView(vDraw, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         progressBar = new ProgressDialog(this);
-        mainViewListeners = new MainListener(getApplicationContext(), imgViewResult);
+        mainViewListeners = new CameraViewListener(getApplicationContext(), imgViewResult);
         startPosTab = new float[2][vDraw.getCountVec()];
         endPosTab = new float[2][vDraw.getCountVec()];
         
@@ -403,7 +404,7 @@ public class PhotoMaker extends Activity implements CvCameraViewListener2{
     
     //MENU SETTINGS
 	public void settings(View v){
-		SettingsDialog dl = new SettingsDialog(settings, this);
+		HamburgerMenu dl = new HamburgerMenu(this);
 		dl.show(getFragmentManager(), "Settings");
     }
 
